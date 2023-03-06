@@ -5,16 +5,16 @@ export default function middleware(req) {
     let url = req.url;
 
     if (!varify && url.includes("/my-profile")) {
-        return NextResponse.redirect("http://localhost:3000/sign-in");
+        return NextResponse.redirect(new URL("/sign-in", request.url));
     }
     if (!varify && url.includes("/my-orders")) {
-        return NextResponse.redirect("http://localhost:3000/sign-in");
+        return NextResponse.redirect(new URL("/sign-in", request.url));
     }
     if (varify && url.includes("/sign-in")) {
-        return NextResponse.redirect("http://localhost:3000/");
+        return NextResponse.redirect(new URL("/", request.url));
     }
     if (varify && url.includes("/sign-up")) {
-        return NextResponse.redirect("http://localhost:3000/");
+        return NextResponse.redirect(new URL("/", request.url));
     }
 }
 export const config = {

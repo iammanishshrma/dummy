@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST={"../shared/components/Footer/Footer.jsx -> ../ScrollToTop/ScrollToTop":{"id":"../shared/components/Footer/Footer.jsx -> ../ScrollToTop/ScrollToTop","files":["static/chunks/src_shared_components_ScrollToTop_ScrollToTop_jsx.js"]}}
