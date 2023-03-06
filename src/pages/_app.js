@@ -27,13 +27,13 @@ export default function App({
                     <meta name="description" content={"This is carorbis."} />
                 </Head>
 
-                <Script
+                <script
                     src="https://accounts.google.com/gsi/client"
                     strategy="beforeInteractive"
                     async
                     defer
                 />
-                <Script
+                <script
                     async
                     defer
                     crossOrigin="anonymous"
@@ -41,7 +41,7 @@ export default function App({
                     nonce="5zXzbKct"
                     strategy="beforeInteractive"
                 />
-                <Script
+                <script
                     async
                     defer
                     crossOrigin="anonymous"
