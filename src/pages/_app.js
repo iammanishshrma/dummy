@@ -26,6 +26,19 @@ export default function App({
                     ></link>
                     <meta name="description" content={"This is carorbis."} />
                 </Head>
+
+                <Script src="https://accounts.google.com/gsi/client" async />
+                <Script
+                    async
+                    crossOrigin="anonymous"
+                    src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v16.0&appId=758578365717574&autoLogAppEvents=1"
+                    nonce="5zXzbKct"
+                />
+                <Script
+                    async
+                    crossOrigin="anonymous"
+                    src="https://connect.facebook.net/en_US/sdk.js"
+                />
                 <Component {...pageProps} />
             </Provider>
         </>
