@@ -5,16 +5,16 @@ export default function middleware(req) {
     let url = req.url;
 
     if (!varify && url.includes("/my-profile")) {
-        return NextResponse.redirect(new URL("/sign-in", request.url));
+        return NextResponse.redirect(new URL("/sign-in", req.url));
     }
     if (!varify && url.includes("/my-orders")) {
-        return NextResponse.redirect(new URL("/sign-in", request.url));
+        return NextResponse.redirect(new URL("/sign-in", req.url));
     }
     if (varify && url.includes("/sign-in")) {
-        return NextResponse.redirect(new URL("/", request.url));
+        return NextResponse.redirect(new URL("/", req.url));
     }
     if (varify && url.includes("/sign-up")) {
-        return NextResponse.redirect(new URL("/", request.url));
+        return NextResponse.redirect(new URL("/", req.url));
     }
 }
 export const config = {
