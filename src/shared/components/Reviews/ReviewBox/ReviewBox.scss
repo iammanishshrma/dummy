@@ -1,0 +1,504 @@
+@import "../../../assets/styles/mixin.scss";
+@import "../../../assets/styles/variable";
+
+.review-panel {
+    margin-top: 10px;
+    border-top: 1px solid $white-secondary;
+    padding: 20px 0 30px;
+
+    @media all and (min-width:$medium) {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .review-rate {
+        margin-bottom: 20px;
+
+        @media all and (min-width:$medium) {
+            width: calc(21% - 10px);
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h5 {
+            color: $black;
+            font-weight: $fw-regular;
+            margin-bottom: 5px;
+            @include fontsize(14px);
+            margin-bottom: 15px;
+        }
+
+        .rating-section {
+            margin-bottom: 15px;
+
+            .transparent-star {
+                width: 24px;
+                height: 22px;
+            }
+
+            .colored-star {
+                width: 24px;
+                height: 22px;
+            }
+
+            .rating-count {
+                @include fontsize(14px);
+                font-weight: $fw-medium;
+                color: $black;
+                opacity: 1;
+            }
+        }
+
+        .verified {
+            display: flex;
+            align-items: center;
+            color: #068922;
+            font-weight: $fw-bold;
+            @include fontsize(14px);
+            margin-bottom: 15px;
+
+            .icon-verify {
+                background: url(../../../assets/images/check-circle.svg) no-repeat;
+                height: 15px;
+                width: 14px;
+                display: block;
+                background-size: 14px auto;
+                margin: 0 3px 0 0;
+            }
+        }
+
+        .helpful-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @media all and (min-width:$medium) {
+                margin-top: auto;
+            }
+
+            .likes {
+                display: flex;
+                align-items: center;
+                color: $navy;
+                @include fontsize(14px);
+                font-weight: $fw-semibold;
+
+                .icon-like {
+                    background: url(../../../assets/images/like-unfill.svg) no-repeat;
+                    height: 20px;
+                    width: 20px;
+                    display: block;
+                    margin-right: 5px;
+                    background-size: 20px auto;
+                    cursor: pointer;
+                    transition: all 0.5s;
+
+                    &:hover {
+                        background: url(../../../assets/images/like-product-icon.svg) no-repeat;
+                        height: 20px;
+                        width: 20px;
+                        display: block;
+                        margin-right: 5px;
+                        background-size: 20px auto;
+                        cursor: pointer;
+                    }
+
+                    &.like-active {
+                        background: url(../../../assets/images/like-product-icon.svg) no-repeat;
+                        height: 20px;
+                        width: 20px;
+                        display: block;
+                        margin-right: 5px;
+                        background-size: 20px auto;
+                        cursor: pointer;
+                        transition: all 0.5s;
+
+                        &:hover {
+                            background: url(../../../assets/images/like-unfill.svg) no-repeat;
+                            height: 20px;
+                            width: 20px;
+                            display: block;
+                            margin-right: 5px;
+                            background-size: 20px auto;
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .icon-dislike {
+                    background: url(../../../assets/images/dislike-product-icon.svg) no-repeat;
+                    height: 20px;
+                    width: 20px;
+                    display: block;
+                    margin: 0 5px;
+                    background-size: 20px auto;
+                    cursor: pointer;
+                    transition: all 0.5s;
+
+                    &:hover {
+                        background: url(../../../assets/images/dislike-product-fill-icon.svg) no-repeat;
+                        height: 20px;
+                        width: 20px;
+                        display: block;
+                        margin-right: 5px;
+                        background-size: 20px auto;
+                        cursor: pointer;
+                    }
+
+                    &.dislike-active {
+                        background: url(../../../assets/images/dislike-product-fill-icon.svg) no-repeat;
+                        height: 20px;
+                        width: 20px;
+                        display: block;
+                        margin-right: 5px;
+                        background-size: 20px auto;
+                        cursor: pointer;
+                        transition: all 0.5s;
+
+                        &:hover {
+                            background: url(../../../assets/images/dislike-product-icon.svg) no-repeat;
+                            height: 20px;
+                            width: 20px;
+                            display: block;
+                            margin: 0 5px;
+                            background-size: 20px auto;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .review-post {
+        margin-bottom: 20px;
+
+        @media all and (min-width:$medium) {
+            width: calc(54% - 10px);
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        p {
+            @include fontsize(14px);
+            color: $text-color;
+
+            @media all and (min-width:$medium) {
+                margin-bottom: 20px;
+            }
+        }
+
+        .detail-list {
+            margin-top: 15px;
+
+            @media all and (min-width:$medium) {
+                display: flex;
+                align-items: center;
+                margin-top: auto;
+            }
+
+            h4 {
+                @include fontsize(12px);
+                font-weight: $fw-semibold;
+                color: $gray;
+                margin-bottom: 5px;
+                line-height: 1.7;
+
+                @media all and (min-width:$medium) {
+                    margin: 0 5px 0 0;
+                    @include fontsize(14px);
+                }
+            }
+
+            h5 {
+                @include fontsize(14px);
+                font-weight: $fw-bold;
+                margin-bottom: 0;
+                line-height: 1.7;
+
+                @media all and (min-width:$medium) {
+                    @include fontsize(16px);
+                }
+            }
+
+            .car-year {
+                @media all and (min-width:$medium) {
+                    margin-right: 25px;
+                }
+            }
+        }
+    }
+
+    .review-images {
+        margin-bottom: 20px;
+
+        @media all and (min-width:$medium) {
+            width: calc(21% - 10px);
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .images-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .image {
+                width: calc(33.33% - 5px);
+                position: relative;
+
+                img {
+                    width: 100%;
+                    display: block;
+                    cursor: pointer;
+                }
+
+                .slide-wrapper {
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    right: 0;
+                    transform: translateY(-50%);
+                    height: 100%;
+                    width: 100%;
+                    background: rgba(0, 0, 0, 0.5);
+                    cursor: pointer;
+                }
+
+                .add-wrap {
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    .add-icon {
+                        background: url(../../../assets/images/show-more-icon.svg) no-repeat;
+                        height: 24px;
+                        width: 24px;
+                        background-size: 24px;
+                    }
+                }
+
+                h4 {
+                    color: $white;
+                    @include fontsize(12px);
+                    margin-bottom: 0;
+                    margin-top: 3px;
+
+                    @media all and (min-width:$r-1400) {
+                        @include fontsize(14px);
+                    }
+                }
+            }
+        }
+
+        p {
+            @include fontsize(14px);
+            color: $black;
+            font-weight: $fw-medium;
+            margin-top: 20px;
+
+            @media all and (min-width:$medium) {
+                margin-top: 13px;
+            }
+        }
+
+        .flag-button {
+            margin-top: 20px;
+            display: flex;
+            justify-content: flex-end;
+
+            @media all and (min-width:$medium) {
+                margin-top: auto;
+            }
+
+            .button-flag {
+                @include fontsize(14px);
+                font-weight: $fw-semibold;
+                display: flex;
+                align-items: center;
+                color: $navy;
+
+                .icon-flag {
+                    margin-right: 5px;
+                    background: url(../../../assets/images/flag.svg) no-repeat;
+                    height: 20px;
+                    width: 20px;
+                    display: block;
+                    background-size: 20px auto;
+                    cursor: pointer;
+                    transition: all 0.5s;
+
+                    &:hover {
+                        background: url(../../../assets/images/flag-dislike.svg) no-repeat;
+                        height: 20px;
+                        width: 20px;
+                        display: block;
+                        background-size: 20px auto;
+                        cursor: pointer;
+                        margin-right: 5px;
+                    }
+
+                    &.flag-active {
+                        background: url(../../../assets/images/flag-dislike.svg) no-repeat;
+                        height: 20px;
+                        width: 20px;
+                        display: block;
+                        background-size: 20px auto;
+                        cursor: pointer;
+                        margin-right: 5px;
+
+                        &:hover {
+                            margin-right: 5px;
+                            background: url(../../../assets/images/flag.svg) no-repeat;
+                            height: 20px;
+                            width: 20px;
+                            display: block;
+                            background-size: 20px auto;
+                            cursor: pointer;
+                            transition: all 0.5s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .pop-up {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+        background: rgba(0, 0, 0, 0.5);
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.8s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: calc(100% - 40px);
+            height: calc(100% - 40px);
+        }
+
+        .popup-content {
+            max-width: 600px;
+            width: calc(100% - 60px);
+
+            img {
+                width: 100%;
+                display: block;
+            }
+
+            .slick-prev {
+                z-index: 1;
+                width: 10px;
+                height: 20px;
+                left: -20px;
+
+                @media all and (min-width:$desktop) {
+                    left: -35px;
+                    width: 22px;
+                    height: 38px;
+                }
+
+
+
+                &.slick-disabled {
+                    display: none !important;
+                }
+
+                &:before {
+                    content: "";
+                    background: url(../../../assets/images/popup-arrow-left.svg) no-repeat;
+                    width: 10px;
+                    height: 20px;
+                    background-size: 10px auto;
+                    display: block;
+
+                    @media all and (min-width:$desktop) {
+                        width: 22px;
+                        height: 38px;
+                        background-size: 22px auto;
+                    }
+                }
+            }
+
+            .slick-next {
+                z-index: 1;
+                width: 10px;
+                height: 20px;
+                right: -20px;
+
+                @media all and (min-width:$desktop) {
+                    right: -35px;
+                    width: 22px;
+                    height: 38px;
+                }
+
+                &.slick-disabled {
+                    display: none !important;
+                }
+
+                &:before {
+                    content: "";
+                    background: url(../../../assets/images/popup-arrow-right.svg) no-repeat;
+                    width: 10px;
+                    height: 20px;
+                    background-size: 10px auto;
+                    display: block;
+
+                    @media all and (min-width:$desktop) {
+                        width: 22px;
+                        height: 38px;
+                        background-size: 22px auto;
+                    }
+                }
+            }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 37px;
+            right: 37px;
+            padding: 0;
+            background-color: transparent;
+
+            .cancel-icon {
+                background: url(../../../assets/images/show-more-icon.svg) no-repeat;
+                height: 23px;
+                width: 23px;
+                background-size: 23px auto;
+                display: block;
+                margin: 0;
+                transform: rotate(136deg);
+
+                @media all and (min-width:$desktop) {
+                    height: 40px;
+                    width: 40px;
+                    background-size: 40px auto;
+                }
+            }
+        }
+    }
+}

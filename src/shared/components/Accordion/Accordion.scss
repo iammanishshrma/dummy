@@ -1,0 +1,9 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.accordion-wrapper {
+  h4 {
+    @include fontsize(18px);
+    margin-bottom: 15px;
+  }
+}

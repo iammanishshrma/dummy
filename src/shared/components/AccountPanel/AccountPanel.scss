@@ -1,0 +1,219 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+
+.left-panel-wrap {
+  .open-panel {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    @media all and (min-width: $small-medium) {
+      display: none;
+    }
+
+    .mob-menu {
+      width: 20px;
+      margin-right: 10px;
+
+      .menu-bar {
+        width: 100%;
+        height: 2px;
+        display: block;
+        background: #0D1E70;
+        margin: 4px 0;
+        transition: all 0.5s;
+      }
+
+      &.active {
+        .menu-bar {
+          &:first-child {
+            transform: rotate(45deg) translateY(-1px) translateX(5px);
+          }
+
+          &:nth-child(2) {
+            display: none;
+          }
+
+          &:nth-child(3) {
+            transform: rotate(-45deg) translateY(1px) translateX(5px);
+          }
+        }
+      }
+    }
+
+    .menu-list {
+      color: $navy;
+      font-weight: $fw-bold;
+      @include fontsize(15px);
+      text-transform: capitalize;
+    }
+  }
+}
+
+.panel-wrap {
+  border: 1px solid $white-secondary;
+  border-radius: 6px;
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.03);
+  transition: all 0.5s;
+
+  @media all and (max-width:$medium-767) {
+    display: none;
+  }
+
+  &.active {
+    @media all and (max-width:$medium-767) {
+      display: block;
+    }
+  }
+
+  .logout-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 20px;
+
+    .logout-text {
+      color: $navy;
+      font-weight: $fw-bold;
+      @include fontsize(14px);
+      transition: all 0.5s;
+
+      @media all and (min-width: $small-medium) {
+        @include fontsize(16px);
+      }
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    .icon-logout {
+      background: url(../../assets/images/icon-logout.svg) no-repeat;
+      height: 14px;
+      width: 13px;
+      background-size: 13px auto;
+      display: block;
+      margin-right: 13px;
+    }
+
+    .logout-btn {
+      display: flex;
+      align-items: center;
+      line-height: 1.4;
+    }
+
+    .icon-logout {
+      margin-right: 8px;
+    }
+  }
+}
+
+.panel-box {
+  padding: 20px 20px;
+  border-bottom: 1px solid $white-secondary;
+  display: flex;
+  position: relative;
+
+  @media all and (min-width: $small-medium) {
+    padding: 25px 20px;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: url("../../assets/images/pagination-rght-icon.svg") no-repeat;
+    width: 10px;
+    height: 20px;
+    background-size: 10px auto;
+    display: block;
+    right: 20px;
+  }
+
+  h2 {
+    margin-bottom: 12px;
+    color: $navy;
+    font-weight: $fw-bold;
+    @include fontsize(14px);
+
+    @media all and (min-width: $small-medium) {
+      @include fontsize(16px);
+    }
+  }
+
+  h3 {
+    margin-bottom: 0;
+    color: $gray;
+    @include fontsize(12px);
+    font-weight: $fw-medium;
+
+    @media all and (min-width: $small-medium) {
+      @include fontsize(14px);
+    }
+  }
+
+  .icon-order {
+    background: url(../../assets/images/icon-order.svg) no-repeat;
+    height: 20px;
+    width: 18px;
+    background-size: 18px auto;
+    display: block;
+    margin-right: 13px;
+  }
+
+  .icon-address {
+    background: url(../../assets/images/icon-address.svg) no-repeat;
+    height: 20px;
+    width: 16px;
+    background-size: 16px auto;
+    display: block;
+    margin-right: 13px;
+  }
+
+  .icon-wishlist {
+    background: url(../../assets/images/icon-account-wishlist.svg) no-repeat;
+    height: 18px;
+    width: 20px;
+    background-size: 18px auto;
+    display: block;
+    margin-right: 13px;
+  }
+
+  .icon-notification {
+    background: url(../../assets/images/icon-notification.svg) no-repeat;
+    height: 20px;
+    width: 18px;
+    background-size: 18px auto;
+    display: block;
+    margin-right: 13px;
+  }
+
+  .icon-info {
+    background: url(../../assets/images/icon-info.svg) no-repeat;
+    height: 20px;
+    width: 18px;
+    background-size: 18px auto;
+    display: block;
+    margin-right: 13px;
+  }
+
+  .icon-help {
+    background: url(../../assets/images/icon-help.svg) no-repeat;
+    height: 20px;
+    width: 20px;
+    background-size: 20px auto;
+    display: block;
+    margin-right: 13px;
+  }
+
+  .icon-login {
+    background: url(../../assets/images/icon-safety.svg) no-repeat;
+    height: 20px;
+    width: 16px;
+    background-size: 16px auto;
+    display: block;
+    margin-right: 13px;
+  }
+}

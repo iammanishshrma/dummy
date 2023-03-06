@@ -1,0 +1,120 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.product-sliders {
+    padding: 0 20px;
+
+    @media all and (min-width:$r-1300) {
+        padding: 0;
+    }
+
+    .product-wrap {
+        width: 100%;
+
+        a {
+            img {
+                width: 100%;
+            }
+        }
+
+        .product-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            @media all and (min-width:$small-medium) {
+                align-items: flex-start;
+                text-align: left;
+            }
+        }
+    }
+
+    h3 {
+        text-align: center;
+        margin-bottom: 25px;
+        @include fontsize(18px);
+
+        @media all and (min-width:$small-medium) {
+            text-align: left;
+            @include fontsize(22px);
+        }
+
+        @media all and (min-width:$desktop) {
+            @include fontsize(28px);
+            margin-bottom: 40px;
+        }
+    }
+
+    .similar-products {
+        margin-bottom: 50px;
+
+        .slick-prev {
+            z-index: 1;
+            width: 12px;
+            left: -10px;
+
+            &.slick-disabled {
+                display: none !important;
+            }
+
+            &:before {
+                content: "";
+                background: url(../../assets/images/similar-left-icon.svg) no-repeat;
+                height: 20px;
+                width: 10px;
+                background-size: 10px auto;
+                display: block;
+                opacity: 0.5;
+
+                @media all and (min-width:$desktop) {
+                    height: 28px;
+                    width: 15px;
+                    background-size: 15px auto;
+                }
+
+                @media all and (min-width:$r-1400) {
+                    height: 38px;
+                    width: 22px;
+                    background-size: 22px auto;
+                }
+            }
+        }
+
+        .slick-next {
+            z-index: 1;
+            width: 12px;
+            right: -10px;
+
+            &.slick-disabled {
+                display: none !important;
+            }
+
+            &:before {
+                content: "";
+                background: url(../../assets/images/similar-right-icon.svg) no-repeat;
+                height: 20px;
+                width: 10px;
+                background-size: 10px auto;
+                display: block;
+                opacity: 0.5;
+
+                @media all and (min-width:$desktop) {
+                    height: 28px;
+                    width: 15px;
+                    background-size: 15px auto;
+                }
+
+                @media all and (min-width:$r-1400) {
+                    height: 38px;
+                    width: 22px;
+                    background-size: 22px auto;
+                }
+            }
+        }
+    }
+
+    .slick-slide {
+        margin-right: -1px;
+    }
+}

@@ -1,0 +1,325 @@
+@import "../../../assets/styles/mixin.scss";
+@import "../../../assets/styles/variable.scss";
+
+.detail-slider {
+  display: flex;
+  justify-content: space-between;
+
+  .slick-list {
+    max-height: 500px;
+
+    .slick-track {
+      height: auto !important;
+    }
+  }
+
+  .slick-slide {
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .slide-img {
+      width: 100%;
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+  }
+
+  .slick-slider {
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  .nav-first {
+    width: calc(100% - 105px);
+    order: 2;
+    position: relative;
+    z-index: 99999;
+    img{
+      width: 100%;
+    }
+    .slick-next {
+      right: 10px !important;
+
+      &.slick-disabled {
+        display: none !important;
+      }
+
+      &::before {
+        content: "";
+        background: url(../../../assets/images/slider-right-icon.svg) no-repeat;
+        height: 24px;
+        width: 13px;
+        background-size: 13px auto;
+        display: block;
+        opacity: 1;
+      }
+    }
+
+    .slick-prev {
+      left: 10px !important;
+      z-index: 1;
+
+      &.slick-disabled {
+        display: none !important;
+      }
+
+      &::before {
+        content: "";
+        background: url(../../../assets/images/slider-left-icon.svg) no-repeat;
+        height: 24px;
+        width: 13px;
+        background-size: 13px auto;
+        display: block;
+        opacity: 1;
+      }
+    }
+
+    .share-product {
+      margin: 10px 0 20px;
+      color: $text-color;
+      @include fontsize(14px);
+      display: block;
+
+      @media all and (min-width: $desktop) {
+        margin: 0 20px 0 0;
+      }
+    }
+
+    .social-media {
+      @media all and (min-width: $desktop) {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+      }
+    }
+
+    .share-media {
+      display: flex;
+
+      li {
+        position: relative;
+        padding: 0 7px;
+        border-right: 2px solid #ebebeb;
+        display: flex;
+        align-items: center;
+
+        @media all and (min-width: $small-375) {
+          padding: 0 13px;
+        }
+
+        a {
+          display: block;
+        }
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          border-right: 0;
+          padding-right: 0;
+        }
+      }
+
+      .social-icon {
+        height: 24px;
+        width: 24px;
+        background-size: 24px auto;
+        display: block;
+        margin-top: 0;
+        transition: all 0.5s;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+
+      .icon-fb {
+        background: url(../../../assets/images/fb-share-icon.svg) no-repeat;
+      }
+
+      .icon-twitter {
+        background: url(../../../assets/images/twitter-share-icon.svg) no-repeat;
+        width: 24px;
+        height: 20px;
+        background-size: 24px auto;
+      }
+
+      .icon-linkedin {
+        background: url(../../../assets/images/linkedin-share-icon.svg) no-repeat;
+      }
+
+      .icon-insta {
+        background: url(../../../assets/images/instagram-share-icon.svg) no-repeat;
+      }
+
+      .icon-share {
+        background: url(../../../assets/images/share-detail-icon.svg) no-repeat;
+      }
+    }
+
+    img {
+      max-width: none;
+    }
+  }
+
+  .nav-second {
+    width: 96px;
+    order: 1;
+    position: relative;
+
+    .slick-slide {
+      border: 0 !important;
+      margin-bottom: 3px;
+    }
+
+    .slick-next {
+      height: 30px;
+      width: 100%;
+      background-color: $white;
+      border: 1px solid $navy;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 100%;
+
+      &.slick-disabled {
+        display: none !important;
+      }
+
+      &:before {
+        content: "";
+        background: url(../../../assets/images/down-arrow.svg) no-repeat;
+        height: 17px;
+        width: 24px;
+        position: absolute;
+        top: 5px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background-size: 24px auto;
+      }
+    }
+
+    .slick-prev {
+      height: 30px;
+      width: 100%;
+      background-color: $white;
+      border: 1px solid $navy;
+      position: absolute;
+      top: 15px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 100%;
+      z-index: 1;
+
+      &.slick-disabled {
+        display: none !important;
+      }
+
+      &:before {
+        content: "";
+        background: url(../../../assets/images/down-arrow.svg) no-repeat;
+        height: 17px;
+        width: 24px;
+        position: absolute;
+        top: 3px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background-size: 24px auto;
+        transform: rotate(180deg);
+      }
+    }
+
+    img {
+      width: 100% !important;
+      transition: all 0.5s;
+      cursor: pointer;
+    }
+
+    .slick-current {
+      .slide-img {
+        &::after {
+          //display: block;
+        }
+      }
+    }
+  }
+
+  .slide-img {
+    >div {
+      >div {
+        &:last-child {
+          left: -20px !important;
+        }
+      }
+    }
+
+    position: relative;
+
+    &::after {
+      border: 2px solid $navy;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      display: none;
+    }
+
+    .slide-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+    }
+
+    .add-wrap {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .add-icon {
+        background: url(../../../assets/images/show-more-icon.svg) no-repeat;
+        height: 24px;
+        width: 24px;
+        background-size: 24px;
+      }
+    }
+
+    h4 {
+      color: $white;
+      @include fontsize(14px);
+      margin-bottom: 0;
+      margin-top: 3px;
+    }
+  }
+}
+
+.input-position {
+  >div {
+    >img {
+      max-height: 500px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}

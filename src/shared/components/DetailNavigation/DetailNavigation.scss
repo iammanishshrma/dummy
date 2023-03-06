@@ -1,0 +1,98 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable";
+
+.navigation-block {
+    background: #fff;
+    border-bottom: 1px solid #EBEBEB;
+    border-radius: 6px 6px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .product-detail-tabbing {
+        width: 100%;
+    }
+
+    ul {
+        display: flex;
+        background: #F2F2F2;
+        overflow: auto;
+    }
+
+    li {
+        list-style-type: none;
+        width: 100%;
+    }
+
+    .tabbing-link {
+        color: #8897A2;
+        font-weight: $fw-bold;
+        @include fontsize(10px);
+        white-space: nowrap;
+        padding: 13px 15px 10px;
+        display: block;
+        border-top: 1px solid transparent;
+        border-bottom: 2px solid transparent;
+        text-transform: uppercase;
+        transition: all 0.5s;
+        cursor: pointer;
+
+        &:hover {
+            color: $base-color;
+            border-bottom: 2px solid $navy;
+        }
+
+        &.react-tabs__tab--selected {
+            color: $base-color;
+            border-bottom: 2px solid $navy;
+        }
+
+        @media all and (min-width:$small-medium) {
+            text-align: center;
+            padding: 19px 15px 16px;
+            @include fontsize(14px);
+        }
+
+        @media all and (min-width:$medium) {
+            @include fontsize(16px);
+        }
+
+        @media all and (min-width:$desktop) {
+            text-align: center;
+            @include fontsize(20px);
+        }
+
+        @media all and (min-width:$r-1400) {
+            text-align: center;
+            @include fontsize(22px);
+        }
+    }
+}
+
+.review-head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    h3 {
+        margin-bottom: 0 !important;
+    }
+
+    .return-back {
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+
+
+        @media all and (min-width:768px) {
+            font-size: 16px;
+        }
+
+        @media all and (min-width:1200px) {
+            font-size: 20px;
+        }
+    }
+}

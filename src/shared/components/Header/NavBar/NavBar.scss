@@ -1,0 +1,268 @@
+@import "../../../assets/styles/mixin.scss";
+@import "../../../assets/styles/variable";
+
+.navigation-wrap {
+  display: $none;
+
+  @media screen and (min-width: $small-medium) {
+    display: $block;
+  }
+
+  .navigation-links {
+    position: relative;
+
+    ul {
+      @include flex-property(flex, center, space-between);
+
+      li {
+        &:last-child {
+          margin-right: 0;
+        }
+
+        .megamenu-wrap {
+          width: 100%;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 46px;
+          margin: 0 auto;
+          background: $white;
+          padding: 18px;
+          @include radius(5px);
+          @include box-shadow(0px 0 10px rgba(0, 0, 0, 0.13));
+          display: block;
+          z-index: 3;
+
+          @media all and (min-width: $small-medium) {
+            display: flex;
+            padding: 0;
+            min-height: 400px;
+          }
+
+          ul {
+            justify-content: initial;
+            flex-wrap: wrap;
+
+            @media all and (min-width: $small-medium) {
+              flex-direction: column;
+              width: 200px;
+              background: #eeeeee;
+              align-items: flex-start;
+            }
+
+            li {
+              list-style: none;
+              margin-right: 0;
+              width: 20%;
+              @include transition(0.4s);
+
+              @media all and (min-width: $small-medium) {
+                width: 100%;
+              }
+
+              &:hover {
+                background-color: $navy;
+
+                @media all and (min-width: $small-medium) {
+                  background-color: #fff;
+                  color: $navy;
+                  opacity: 1;
+                }
+              }
+
+              a {
+                padding: 14px;
+
+                &:hover {
+                  opacity: 1;
+                }
+              }
+            }
+
+            &.ltl-menu {
+              margin-bottom: 20px;
+
+              @media all and (min-width: 768px) {
+                margin-bottom: 0;
+              }
+
+              a {
+                color: #000;
+                padding: 20px 25px;
+                position: relative;
+                font-size: 13px;
+                transition: all 0.5s;
+                margin: 0;
+
+                &:hover {
+                  color: $navy;
+                }
+
+                .arrow {
+                  position: absolute;
+                  right: 10px;
+                  top: 50%;
+                  transform: translateY(-50%) rotate(-90deg);
+
+                  svg {
+                    width: 15px;
+                    height: 6px;
+                  }
+                }
+
+                &:hover {
+                  color: $navy;
+                }
+              }
+            }
+          }
+
+          .rtl-menu {
+            @media all and (min-width: 768px) {
+              display: flex;
+              flex-wrap: wrap;
+              padding: 30px;
+              width: calc(100% - 200px);
+            }
+
+            .rtl-menu-wrap {
+              margin-bottom: 20px;
+
+              @media all and (min-width: 768px) {
+                width: 48%;
+                padding-right: 35px;
+              }
+
+              @media all and (min-width: 1200px) {
+                width: 32%;
+              }
+
+              h4 {
+                border-bottom: 1px solid #f0f0f0;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+                color: $navy;
+                font-size: 12px;
+
+                @media all and (min-width:1200px) {
+                  font-size: 14px;
+                }
+              }
+            }
+
+            ul {
+              background-color: #fff;
+              width: 100%;
+
+              li {
+                display: flex;
+                margin-bottom: 10px;
+                align-items: center;
+
+                .arrow {
+                  transform: rotate(-90deg);
+                  // margin-right: 5px;
+
+                  svg {
+                    width: 15px;
+                    height: 6px;
+                  }
+                }
+
+                a {
+                  padding: 0 5px;
+                  font-size: 12px;
+                  color: #000;
+                  margin-left: 5px;
+                  transition: all 0.5s;
+                  margin: 10px;
+
+                  &:hover {
+                    color: $navy;
+                  }
+
+                  @media all and (min-width:1200px) {
+                    font-size: 13px;
+                  }
+
+                  &:hover {
+                    color: $navy;
+                  }
+                }
+              }
+            }
+
+            .view-more {
+              color: $navy;
+              font-size: 12px;
+              transition: all 0.5s;
+              padding: 0 15px;
+
+              &:hover {
+                color: #000;
+              }
+            }
+          }
+        }
+
+
+
+        @media screen and (min-width: $base-media) {
+          margin-right: 62.25px;
+        }
+
+        a {
+          color: $base-color;
+          font-weight: $fw-semibold;
+          @include fontsize(12px);
+          display: block;
+          text-transform: $capitalize;
+          line-height: 1.24;
+          @include transition(0.4s);
+          margin: 13px 0;
+
+          &.active {
+            color: $navy;
+
+            svg {
+              transform: rotate(180deg);
+
+              path {
+                stroke-width: 3;
+              }
+            }
+          }
+
+          &:hover {
+            color: $navy;
+          }
+
+          @media screen and (min-width: $small-medium) {
+            margin: 19px 0;
+          }
+
+          @media screen and (min-width: $desktop) {
+            line-height: 1;
+            @include fontsize(16px);
+          }
+
+          .arrow {
+            margin-left: 4px;
+
+            svg {
+              width: 10px;
+              height: 5px;
+              vertical-align: middle;
+              @include transition(0.4s);
+
+              @media screen and (min-width: $desktop) {
+                width: 13px;
+                height: 8px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

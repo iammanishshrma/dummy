@@ -1,0 +1,48 @@
+@import "../../../assets/styles/mixin.scss";
+@import "../../../assets/styles/variable";
+
+.cart-icon {
+    position: relative;
+    margin-bottom: 7px;
+    @include transition(0.3s);
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.6;
+    }
+
+    img {
+        max-width: 17px;
+
+        @media screen and (min-width:$desktop) {
+            max-width: 24px;
+        }
+    }
+
+    .notifications {
+        font-weight: $fw-extrabold;
+        color: $white;
+        position: absolute;
+        top: -7px;
+        right: -3px;
+        min-width: 15px;
+        height: 15px;
+        @include fontsize(7px);
+        border-radius: 50%;
+        background: $notify-background;
+        @include flex-property(flex, center, center);
+
+        @media screen and (min-width:$small-medium) {
+            @include fontsize(8px);
+        }
+
+        @media screen and (min-width:$desktop) {
+            top: -8px;
+            right: -10px;
+            min-width: 16px;
+            height: 16px;
+            line-height: 1;
+        }
+
+    }
+}

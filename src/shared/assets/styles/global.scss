@@ -1,0 +1,743 @@
+/*
+ Table Of Contents
+ 1.) Eric Meyer's Reset
+ 2.) Global Typography
+	 2.0.1) Font Face
+	 2.0.2) Global Headings
+	 2.0.3) Form Elements
+	 2.0.4) List styles
+	 2.0.5) General Text Formatting
+	 2.0.6) Link elements
+	 2.0.7) Table Elements
+	 2.0.8) Button Styles
+	 2.0.9) Sprite Icons
+ 3.) Site Wide Content
+ 4.) Header Style
+ 5.) Footer Style
+ ===============================================*/
+
+/*
+ 1.) Eric Meyer's Reset
+ ----------------------------------------*/
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+  1.) Global Typography
+  ----------------------------------------*/
+*,
+:before,
+:after {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+html {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	font-size: 100%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: $primary-fontfamily;
+	@include fontsize(14px);
+	line-height: 1.2;
+	font-weight: $fw-regular;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url('../fonts/OpenSans-Light.woff') format('woff2'),
+		url('../fonts/OpenSans-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url('../fonts/OpenSans-Extrabold.woff2') format('woff2'),
+		url('../fonts/OpenSans-Extrabold.woff') format('woff');
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url('../fonts/OpenSans-Bold.woff2') format('woff2'),
+		url('../fonts/OpenSans-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url('../fonts/OpenSans-Semibold.woff2') format('woff2'),
+		url('../fonts/OpenSans-Semibold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url('../fonts/OpenSans.woff2') format('woff2'),
+		url('../fonts/OpenSans.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Oswald';
+	src: url('../fonts/Oswald-Regular.woff2') format('woff2'),
+		url('../fonts/Oswald-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Jost* 500';
+	src: url('../fonts/Jost-Medium.woff2') format('woff2'),
+		url('../fonts/Jost-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Jost* 600 Semi';
+	src: url('../fonts/Jost-Semi.woff2') format('woff2'),
+		url('../fonts/Jost-Semi.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+/*
+  2.0.2) Global Headings
+  -----------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: normal;
+	color: $text-color;
+}
+
+h1 {
+	margin-bottom: 15px;
+	font-weight: $fw-700;
+}
+
+h2 {
+	font-weight: $fw-semibold;
+	margin-bottom: 23px;
+	text-transform: capitalize;
+}
+
+h3 {
+	font-weight: $fw-700;
+	margin-bottom: 30px;
+	text-transform: capitalize;
+}
+
+h4 {
+	font-weight: $fw-bold;
+	margin-bottom: 30px;
+}
+
+h5 {
+	font-weight: $fw-bold;
+	margin-bottom: 30px;
+}
+
+h6 {
+	font-weight: $fw-bold;
+	margin-bottom: 30px;
+}
+
+/*
+  2.0.3) Form Elements
+  -----------------------------*/
+button,
+input,
+optgroup,
+select,
+textarea {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+	background: #fff;
+	border: 1px solid #ccc;
+	font-family: 'Open Sans', sans-serif;
+}
+
+input,
+select,
+textarea {
+	-webkit-appearance: none;
+	-webkit-appearance: none;
+	border-radius: 0;
+}
+
+input {
+	line-height: normal;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+	border: none;
+	outline: 0;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	padding: 0;
+	border: none;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="file"] {
+	-webkit-appearance: none;
+	cursor: pointer;
+	line-height: normal;
+	overflow: visible;
+}
+
+button[disabled],
+input[disabled] {
+	cursor: default;
+	color: #999;
+	border-color: #ccc;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+/*
+  2.0.4) List Styles
+  ---------------------------------*/
+ul,
+ol,
+dl {
+	font-size: 100%;
+	line-height: 1.5;
+}
+
+li,
+dt {
+	line-height: 1.5em;
+}
+
+dl {
+	margin: 0 0 1em 0;
+}
+
+dd {
+	margin: 0 0 1em 0.8em;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0 0 0 0;
+}
+
+ol {
+	list-style-type: decimal;
+	margin: 0 0 1em 0;
+}
+
+ul ul,
+ol ul {
+	list-style-type: circle;
+	margin-top: 0;
+}
+
+ol ol {
+	list-style-type: lower-latin;
+	margin-top: 0;
+}
+
+/*
+  2.0.5) General Text Formatting
+  -----------------------------------*/
+p {
+	color: #000;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+blockquote,
+cite,
+q,
+var,
+dfn {
+	font-style: italic;
+}
+
+blockquote {
+	background: transparent;
+	color: #666666;
+}
+
+small {
+	font-size: 12px;
+	line-height: 1.75;
+}
+
+pre,
+code,
+kbd,
+tt,
+samp,
+var {
+	font-size: 100%;
+}
+
+pre {
+	font-size: 100%;
+	line-height: 1.5;
+	margin: 0 0 10px 0;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+pre,
+code {
+	color: #880000;
+}
+
+kbd,
+samp,
+var {
+	color: #666666;
+	font-weight: bold;
+}
+
+acronym,
+abbr {
+	border-bottom: 1px #aaa dotted;
+	font-variant: small-caps;
+	cursor: help;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a,
+strong,
+span,
+img {
+	display: inline-block;
+}
+
+body img {
+	-webkit-user-select: none;
+	/* Chrome all / Safari all */
+	-moz-user-select: none;
+	/* Firefox all */
+	-ms-user-select: none;
+	/* IE 10+ */
+	-o-user-select: none;
+	user-select: none;
+}
+
+select::-ms-expand {
+	display: none;
+}
+
+select::-ms-expand {
+	/* IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	/* IE 5-7 */
+	filter: alpha(opacity=0);
+	/* Good browsers  */
+	opacity: 0;
+}
+
+/*
+  Link style
+  -------------------------*/
+a {
+	color: initial;
+	text-decoration: none;
+
+	&:focus,
+	&:hover {
+		color: initial;
+		text-decoration: none;
+		outline: none;
+	}
+}
+
+/*
+  Button Styles
+  -------------------------*/
+.btn,
+input.btn,
+button.btn {
+	display: inline-block;
+	font-size: 12px;
+	line-height: normal;
+	vertical-align: middle;
+	text-align: $align-center;
+	white-space: nowrap;
+	cursor: pointer;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.12);
+	background-color: $navy;
+	@include radius(4px);
+	@include transition(0.3s);
+	min-width: 143px;
+	padding: 10px;
+	color: $white;
+	text-transform: $uppercase;
+}
+
+.btn {
+	&:hover {
+		background-color: $white;
+
+		a {
+			color: $navy;
+
+			svg {
+				transform: translateX(3px);
+
+				path {
+					fill: $navy;
+				}
+			}
+		}
+	}
+
+	a {
+		font-weight: $fw-700;
+		color: $white;
+		text-transform: $uppercase;
+		@include flex-property(flex, center, center);
+
+		svg {
+			@include transition(0.3s);
+			height: 13px;
+			width: 13px;
+			margin-left: 4px;
+		}
+	}
+}
+
+.btn:hover,
+.btn:focus,
+input.btn:hover,
+input.btn:focus,
+button.btn:hover,
+button.btn:focus {
+	color: #4d87ff;
+}
+
+button {
+	border: none;
+}
+
+/*
+  Sprite Icons
+  -------------------------*/
+[class^="icon-"],
+[class*="icon-"] {
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	display: inline-block;
+	height: 14px;
+	line-height: 14px;
+	margin-top: 1px;
+	vertical-align: text-top;
+	width: 14px;
+}
+
+/* Containers
+ ----------------------------------------------------------------------------------------------------*/
+.container {
+	max-width: 1384px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 15px;
+
+	@media screen and (min-width:$base-media) {
+		padding: 0;
+	}
+}
+
+::placeholder {
+	font-family: $primary-fontfamily;
+}
+
+/*
+  Flex
+  -------------------------*/
+.d-flex {
+	display: -ms-flexbox;
+	display: flex
+}
+
+.justify-content-start {
+	-ms-flex-pack: start;
+	justify-content: flex-start
+}
+
+.justify-content-end {
+	-ms-flex-pack: end;
+	justify-content: flex-end
+}
+
+.justify-content-center {
+	-ms-flex-pack: center;
+	justify-content: center
+}
+
+.justify-content-between {
+	-ms-flex-pack: justify;
+	justify-content: space-between
+}
+
+.justify-content-around {
+	-ms-flex-pack: distribute;
+	justify-content: space-around
+}
+
+.align-items-start {
+	-ms-flex-align: start;
+	align-items: flex-start
+}
+
+.align-items-end {
+	-ms-flex-align: end;
+	align-items: flex-end
+}
+
+.align-items-center {
+	-ms-flex-align: center;
+	align-items: center
+}
+
+.align-items-baseline {
+	-ms-flex-align: baseline;
+	align-items: baseline
+}
+
+.flex-wrap {
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap
+}
+
+.p-dropdown:not(.p-disabled).p-focus {
+	box-shadow: none;
+}
+
+.error-msg {
+	color: red;
+	font-size: .8125rem;
+	position: absolute;
+	top: auto;
+	right: auto;
+	bottom: -20px;
+	left: 0;
+}
+
+.imp-field {
+	color: rgba(215, 0, 34, 1);
+	margin: 0;
+	position: absolute;
+	top: 4px;
+	right: -10px;
+}
+
+.required-field {
+	color: rgba(215, 0, 34, 1);
+}
+
+.form-control {
+	width: 100%;
+	border: 1px solid $gray-light-secondary;
+	border-radius: 4px;
+	padding: 13px;
+	color: $text-color;
+
+	&::placeholder {
+		color: rgba(0, 0, 0, 0.5);
+	}
+
+	&:hover {
+		border: 1px solid $gray-light-secondary;
+	}
+}
+
+.p-inputtext {
+	text-align: left;
+}

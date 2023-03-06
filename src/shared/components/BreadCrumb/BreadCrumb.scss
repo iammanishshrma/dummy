@@ -1,0 +1,55 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.breadcrumb-wrap {
+  margin: 25px 0;
+
+  .container {
+    padding: 0;
+  }
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+
+  li {
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      border-right: 1.5px solid $text-color;
+      border-top: 1.5px solid $text-color;
+      height: 7px;
+      right: -12px;
+      top: 50%;
+      transform: rotate(45deg) translateY(-50%);
+      width: 7px;
+    }
+
+    &:last-child {
+      a {
+        color: $navy;
+        opacity: 0.5;
+      }
+
+      &:after {
+        display: none;
+      }
+    }
+
+    a {
+      display: block;
+      font-family: $primary-fontfamily;
+      line-height: 1;
+      @include fontsize(12px);
+      color: $text-color;
+      font-weight: $fw-bold;
+      text-transform: $capitalize;
+    }
+  }
+}

@@ -1,0 +1,213 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable";
+
+.page-count {
+    color: $navy;
+    @include fontsize(14px);
+    font-family: $primary-fontfamily;
+    margin-bottom: 15px;
+
+    @media all and (min-width:$small-medium) {
+        margin-bottom: 0;
+    }
+}
+
+.pagination-main-wrap {
+    .p-paginator {
+        justify-content: space-between !important;
+        padding: 0 !important;
+
+        @media all and (min-width:$small-medium) {
+            justify-content: flex-start !important;
+        }
+
+        @media all and (min-width:$medium) {
+            width: 85%;
+        }
+
+        @media all and (min-width:$desktop) {
+            width: 75%;
+        }
+
+        .p-paginator-prev {
+            order: 2;
+            background-color: transparent;
+            border: 2px solid $navy;
+            color: $navy;
+            border-radius: 6px;
+            @include fontsize(14px);
+            position: relative;
+            height: auto;
+            padding: 8px 5px;
+            min-width: 55px;
+
+            >span {
+                margin-left: 6px;
+                font-weight: 700;
+            }
+
+            @media all and (min-width:$small-medium) {
+                padding: 10px;
+                min-width: 73px;
+            }
+
+            @media all and (min-width:$medium) {
+                padding: 12px 35px;
+            }
+
+            &:after {
+                content: "";
+                background: url(../../assets/images/pagination-lft-icon.svg) no-repeat;
+                width: 6px;
+                height: 12px;
+                display: block;
+                margin-left: 0;
+                background-size: 6px auto;
+                position: absolute;
+                left: 6px;
+                top: 50%;
+                transform: translateY(-50%);
+                margin-top: 1px;
+
+                @media all and (min-width:$small-medium) {
+                    left: 6px;
+                }
+
+                @media all and (min-width:$medium) {
+                    left: 20px;
+                }
+            }
+        }
+
+        .p-paginator-pages {
+            order: 3;
+            width: auto !important;
+            margin-right: 0;
+
+            @media all and (min-width:$small-medium) {
+                margin: 0 12px;
+            }
+
+            @media all and (min-width:$desktop) {
+                margin: 0 30px;
+            }
+
+            @media all and (min-width:$desktop) {
+                margin: 0 60px;
+            }
+        }
+
+        .p-paginator-next {
+            order: 4;
+            position: relative;
+            background-color: transparent;
+            border: 2px solid $navy;
+            color: $navy;
+            border-radius: 6px;
+            @include fontsize(14px);
+            position: relative;
+            height: auto;
+            padding: 8px 5px;
+            min-width: 55px;
+
+            >span {
+                margin-right: 10px;
+                font-weight: 700;
+            }
+
+            @media all and (min-width:$small-medium) {
+                padding: 10px;
+                min-width: 73px;
+            }
+
+            @media all and (min-width:$medium) {
+                padding: 12px 35px;
+            }
+
+            &:after {
+                content: "";
+                background: url(../../assets/images/pagination-rght-icon.svg) no-repeat;
+                width: 6px;
+                height: 12px;
+                display: block;
+                margin-left: 0;
+                background-size: 6px auto;
+                position: absolute;
+                right: 9px;
+                top: 50%;
+                transform: translateY(-50%);
+                margin-top: 2px;
+
+                @media all and (min-width:$medium) {
+                    right: 20px;
+                }
+            }
+        }
+
+        >span {
+            width: 100% !important;
+
+
+            @media all and (min-width:$small-medium) {
+                width: auto !important;
+                margin-right: auto;
+            }
+        }
+
+        .p-paginator-next:not(.p-disabled):not(.p-highlight):hover {
+            box-shadow: none;
+            border: 2px solid $navy;
+        }
+
+        .p-paginator-prev:not(.p-disabled):not(.p-highlight):hover {
+            box-shadow: none;
+            border: 2px solid $navy;
+        }
+    }
+}
+
+.pagination-main-wrap {
+    .p-paginator {
+        .p-paginator-pages {
+            .p-paginator-page {
+                color: $text-color;
+                min-width: auto;
+                height: auto;
+                margin-right: 3px;
+                transition: none;
+                border-radius: 4px;
+                padding: 9px 7px;
+                box-shadow: none;
+                @include fontsize(12px);
+
+                @media all and (min-width:$medium) {
+                    padding: 10px;
+                    @include fontsize(14px);
+                }
+            }
+        }
+    }
+}
+
+.pagination-main-wrap {
+    .p-paginator {
+        .p-paginator-pages {
+            .p-paginator-page {
+                &.p-highlight {
+                    background: $navy;
+                    border-color: transparent;
+                    color: $white;
+                }
+            }
+        }
+    }
+
+
+}
+
+
+.pagination-wrap {
+    color: $text-color;
+    user-select: none;
+    text-align: center;
+}

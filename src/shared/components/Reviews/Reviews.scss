@@ -1,0 +1,42 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable";
+
+.rate-wrap {
+    @media all and (min-width:$small-medium) {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.review-select {
+    padding: 18px 0;
+    text-transform: capitalize;
+    @include fontsize(16px);
+    font-weight: $fw-semibold;
+    color: $text-color;
+
+    @media all and (min-width:$small-medium) {
+        display: flex;
+        align-items: center;
+    }
+
+    .selector-wrapp {
+        max-width: 248px;
+        width: 100%;
+        margin-top: 5px;
+
+        @media all and (min-width:$small-medium) {
+            margin: 0 0 0 20px;
+        }
+    }
+
+    .filter-selected {
+        padding: 10px;
+    }
+
+    .selector-wrapp {
+        .menu-wrapper {
+            width: 100%;
+        }
+    }
+}

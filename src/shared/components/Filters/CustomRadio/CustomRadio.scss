@@ -1,0 +1,89 @@
+@import "../../../assets/styles/mixin.scss";
+@import "../../../assets/styles/variable.scss";
+
+.radiobtn-wrap {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    @include fontsize(22px);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    .custom-label {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.radiobtn-wrap {
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+}
+
+.radiobtn-wrap {
+    .checkmark {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        height: 21px;
+        width: 21px;
+        outline: 2px solid $navy;
+        border: 2px solid transparent;
+        background-color: transparent;
+        border-radius: 50%;
+    }
+}
+
+.radiobtn-wrap {
+    &:hover {
+        input {
+            ~.checkmark {
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+.radiobtn-wrap {
+    input {
+        &:checked {
+            ~.checkmark {
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+.radiobtn-wrap {
+    .checkmark {
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+    }
+}
+
+
+/* Show the indicator (dot/circle) when checked */
+.radiobtn-wrap {
+    input {
+        &:checked {
+            ~.checkmark {
+                border: 5px solid $white;
+                background: $navy;
+
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+}

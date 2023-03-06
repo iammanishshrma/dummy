@@ -1,0 +1,336 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable.scss";
+
+.product-wrap {
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 40px 8px 8px;
+  width: 49%;
+  margin-bottom: 8px;
+
+
+
+  &:hover {
+    border-color: $navy;
+
+    .product-image {
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  @media screen and (min-width: $small-medium) {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: $medium) {
+    margin-right: 16px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 43px 12px 12px;
+  }
+
+  .product-image {
+    margin-bottom: 35px;
+    position: relative;
+
+    @media screen and (min-width: $r-1300) {
+      margin-bottom: 54px;
+    }
+
+    img {
+      transition: all 0.5s;
+      width: 100%;
+    }
+
+    .recomended {
+      color: $white;
+      font-weight: $fw-700;
+      @include fontsize(11px);
+      line-height: 1;
+      min-width: 94px;
+      padding: 6px 8px;
+      background-color: $blue-background;
+      position: absolute;
+      right: 0;
+      top: -32px;
+      display: $block;
+      text-align: $align-center;
+      z-index: 2;
+
+      @media screen and (min-width: $desktop) {
+        @include fontsize(12px);
+        top: -31px;
+      }
+    }
+
+    .top-rated {
+      color: $white;
+      font-weight: $fw-700;
+      @include fontsize(11px);
+      line-height: 1;
+      min-width: 94px;
+      padding: 7px 8px;
+      background-color: $toprated-background;
+      position: absolute;
+      right: 0;
+      top: -32px;
+      display: $block;
+      text-align: $align-center;
+      text-transform: $capitalize;
+      z-index: 1;
+
+      @media screen and (min-width: $desktop) {
+        @include fontsize(12px);
+        top: -31px;
+      }
+    }
+
+    a {
+      display: $block;
+      height: 90px;
+      text-align: center;
+
+      @media screen and (min-width: $desktop) {
+        height: 116px;
+      }
+
+      @media screen and (min-width: $r-1300) {
+        height: 191px;
+        @include flex-property(flex, center, center);
+      }
+
+      img {
+        height: 100%;
+        object-fit: contain;
+        // width: 100%;
+
+        @media screen and (min-width: $r-1300) {
+          height: auto;
+        }
+      }
+    }
+  }
+
+  .product-content {
+    .brand-name {
+      @include fontsize(13px);
+      color: $text-color;
+      opacity: 0.6;
+      line-height: 1;
+      text-transform: $uppercase;
+      font-weight: $fw-semibold;
+      display: $block;
+      margin-bottom: 3px;
+
+      @media screen and (min-width: $small-medium) {
+        @include fontsize(12px);
+      }
+
+      @media screen and (min-width: $desktop) {
+        @include fontsize(14px);
+      }
+
+      @media screen and (min-width: $r-1300) {
+        @include fontsize(16px);
+        margin-bottom: 8px;
+      }
+    }
+
+    .product-name {
+      @include fontsize(13px);
+      color: $text-color;
+      font-weight: $fw-700;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      line-height: 1;
+      margin-bottom: 5px;
+
+      @media screen and (min-width: $small-medium) {
+        -webkit-line-clamp: 2;
+        line-height: 1.3;
+        @include fontsize(12px);
+      }
+
+      @media screen and (min-width: $desktop) {
+        @include fontsize(14px);
+        margin-bottom: 10px;
+      }
+
+      @media screen and (min-width: $r-1300) {
+        @include fontsize(16px);
+        margin-bottom: 12px;
+        line-height: 1.38;
+      }
+    }
+
+    .product-discount {
+      @media screen and (min-width: $medium) {
+        @include flex-property(flex, center, space-between);
+      }
+
+      .price-wrap {
+        display: flex;
+        align-items: center;
+
+        .actual-price {
+          font-weight: $fw-medium;
+          @include fontsize(13px);
+          color: $light-gray;
+          margin-right: 8px;
+          text-decoration: line-through;
+
+          @media screen and (min-width: $small-medium) {
+            @include fontsize(12px);
+          }
+
+          @media screen and (min-width: $desktop) {
+            @include fontsize(14px);
+            display: flex;
+            align-items: center;
+          }
+
+          @media screen and (min-width: $r-1300) {
+            @include fontsize(16px);
+            line-height: 1.13;
+          }
+
+          .rupee-symbol {
+            @media screen and (min-width: $desktop) {
+              line-height: 0;
+            }
+
+            img {
+              max-width: 8px;
+              vertical-align: middle;
+              margin-right: 3px;
+
+              @media screen and (min-width: $desktop) {
+                max-width: 9px;
+                vertical-align: initial;
+              }
+
+              @media screen and (min-width: $r-1300) {
+                max-width: 100%;
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+
+        .discount-price {
+          @include fontsize(18px);
+          font-weight: $fw-700;
+          color: $text-color;
+          line-height: 1;
+
+          @media screen and (min-width: $small-medium) {
+            @include fontsize(15px);
+          }
+
+          @media screen and (min-width: $desktop) {
+            margin-right: 10px;
+          }
+
+          @media screen and (min-width: $desktop) {
+            @include fontsize(20px);
+          }
+
+          @media screen and (min-width: $r-1300) {
+            @include fontsize(24px);
+          }
+
+          img {
+            max-width: 10px;
+            margin-right: 2px;
+
+            @media screen and (min-width: $small-medium) {
+              max-width: 9px;
+            }
+
+            @media screen and (min-width: $desktop) {
+              max-width: 11px;
+            }
+
+            @media screen and (min-width: $r-1300) {
+              max-width: 100%;
+              margin-right: 4px;
+            }
+          }
+        }
+      }
+
+      .discount-off {
+        font-weight: $fw-semibold;
+        color: $notify-background;
+        @include fontsize(12px);
+
+        @media screen and (min-width: $desktop) {
+          @include fontsize(14px);
+        }
+      }
+    }
+  }
+}
+
+.rating-section {
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 10px;
+  }
+
+  @media screen and (min-width: $r-1300) {
+    margin-bottom: 12px;
+  }
+
+  .colored-star {
+    margin-right: 4px;
+    background: url("../../assets/images/yellow-star.svg") center no-repeat;
+    height: 13px;
+    width: 12px;
+    background-size: cover;
+
+    @media screen and (min-width: $desktop) {
+      height: 15.22px;
+      width: 16px;
+    }
+  }
+
+  .transparent-star {
+    margin-right: 4px;
+    background: url("../../assets/images/transparent.svg") center no-repeat;
+    height: 13px;
+    width: 12px;
+    background-size: cover;
+
+    @media screen and (min-width: $desktop) {
+      height: 15.22px;
+      width: 16px;
+    }
+  }
+
+  .rating-count {
+    @include fontsize(11px);
+    line-height: 1;
+    opacity: 0.6;
+    color: $text-color;
+    font-weight: $fw-medium;
+    margin-left: 4px;
+
+    @media screen and (min-width: $desktop) {
+      @include fontsize(14px);
+    }
+  }
+}

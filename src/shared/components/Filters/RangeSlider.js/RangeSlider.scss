@@ -1,0 +1,70 @@
+@import "../../../assets/styles/mixin.scss";
+@import "../../../assets/styles/variable.scss";
+
+.range-type {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+
+    .price {
+        color: $navy;
+        @include fontsize(12px);
+        text-transform: capitalize;
+    }
+}
+
+.range {
+    .p-slider {
+        .p-slider-range {
+            background: $navy;
+        }
+
+        .p-slider-handle {
+            height: 24px;
+            width: 24px;
+            background: $navy;
+            border: 2px solid $navy;
+            border-radius: 50%;
+            transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        }
+    }
+}
+
+.range {
+    .p-slider {
+        &.p-slider-horizontal {
+            .p-slider-handle {
+                margin-top: -12px;
+                margin-left: -12px;
+            }
+        }
+    }
+}
+
+.range-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    .range-value {
+        color: $text-color;
+        font-weight: $fw-bold;
+    }
+}
+
+.range {
+    .p-slider:not(.p-disabled) .p-slider-handle:hover {
+        background: $navy;
+        border-color: $navy;
+    }
+}
+
+.range {
+    .p-slider {
+        .p-slider-handle {
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,65 @@
+@import "../../../assets/styles/mixin.scss";
+@import "../../../assets/styles/variable.scss";
+
+.selector-wrapp {
+    position: relative;
+    margin-top: 10px;
+
+    @media all and (min-width:$small-medium) {
+        margin-top: 0;
+    }
+
+    .menu-wrapper {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: $white;
+        z-index: 1;
+        padding: 12px 0;
+        box-shadow: -4px 0px 4px rgba(0, 0, 0, 0.04), 4px 0px 4px rgba(0, 0, 0, 0.04), 0px -4px 4px rgba(0, 0, 0, 0.04), 0px 4px 4px rgba(0, 0, 0, 0.04);
+        border-radius: 4px;
+        z-index: 2;
+
+        li {
+            margin-bottom: 7px;
+            padding: 6px 15px;
+            cursor: pointer;
+
+            &.active {
+                background: $navy;
+
+                .select-menu {
+                    color: $white;
+                }
+            }
+
+            &:hover {
+                background: $navy;
+
+                .select-menu {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+.filter-selected {
+    display: flex;
+    align-items: center;
+    background: #FFFFFF;
+    border: 2px solid #EBEBEB;
+    border-radius: 6px;
+    padding: 3px 10px;
+    min-width: 148px;
+    cursor: pointer;
+
+    .dropdown-icon {
+        background: url(../../../assets/images/dropdown.svg) no-repeat;
+        width: 15px;
+        height: 24px;
+        background-size: 15px auto;
+        display: block;
+        margin-right: 5px;
+    }
+}

@@ -1,0 +1,26 @@
+@import "../../assets/styles/mixin.scss";
+@import "../../assets/styles/variable";
+
+.details-block {
+    padding: 15px;
+    border: 1px solid $F2-border;
+    margin-bottom: 30px;
+    border-radius: 6px;
+
+    &:first-child {
+        border-top: 0;
+    }
+
+    h3 {
+        margin-bottom: 16px;
+        @include fontsize(18px);
+
+        @media all and (min-width:$desktop) {
+            @include fontsize(22px);
+        }
+    }
+
+    p {
+        @include fontsize(14px);
+    }
+}
