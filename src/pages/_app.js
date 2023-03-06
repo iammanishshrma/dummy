@@ -26,28 +26,6 @@ export default function App({
                     ></link>
                     <meta name="description" content={"This is carorbis."} />
                 </Head>
-
-                <script
-                    src="https://accounts.google.com/gsi/client"
-                    strategy="beforeInteractive"
-                    async
-                    defer
-                />
-                <script
-                    async
-                    defer
-                    crossOrigin="anonymous"
-                    src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v16.0&appId=758578365717574&autoLogAppEvents=1"
-                    nonce="5zXzbKct"
-                    strategy="beforeInteractive"
-                />
-                <script
-                    async
-                    defer
-                    crossOrigin="anonymous"
-                    src="https://connect.facebook.net/en_US/sdk.js"
-                    strategy="beforeInteractive"
-                />
                 <Component {...pageProps} />
             </Provider>
         </>

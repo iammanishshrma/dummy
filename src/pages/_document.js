@@ -5,6 +5,35 @@ export default function Document() {
     return (
         <Html lang="en">
             <Head />
+
+            <script
+                src="https://accounts.google.com/gsi/client"
+                strategy="beforeInteractive"
+                // async
+                defer
+            />
+            <script
+                async
+                // defer
+                crossOrigin="anonymous"
+                src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v16.0&appId=758578365717574&autoLogAppEvents=1"
+                nonce="5zXzbKct"
+                strategy="beforeInteractive"
+            />
+            <script
+                async
+                // defer
+                crossOrigin="anonymous"
+                src="https://connect.facebook.net/en_US/sdk.js"
+                strategy="beforeInteractive"
+            />
+
+            <script
+                async
+                src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+                crossorigin="anonymous"
+            />
             <body>
                 <Main />
                 <div id="fb-root"></div>
