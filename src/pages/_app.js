@@ -7,7 +7,6 @@ import "@/shared/assets/styles/main.scss";
 import favicon from "@/shared/assets/images/favicons/favicon.ico";
 import appleTouchIcon from "@/shared/assets/images/favicons/apple-touch-icon.png";
 import store from "@/shared/store/store";
-import Script from "next/script";
 
 export default function App({
     Component,
